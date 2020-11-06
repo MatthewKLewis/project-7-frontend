@@ -45,7 +45,7 @@ class App extends React.Component {
     loggedIn: true
     })
 
-    axios.post('/dispatchers/createUser', {
+    axios.post('https://problemticket.herokuapp.com/dispatchers/createUser', {
       usernumber: this.state.user.id,
       username: this.state.user.username,
       email: this.state.user.email,
@@ -117,4 +117,4 @@ export default App;
 
 // https://problemticket.herokuapp.com/dispatchers/manifest to GET a manifest of all USERS
 // https://problemticket.herokuapp.com/dispatchers/         to GET a list of all TICKETS
-// https://problemticket.herokuapp.com/dispatchers/         to POST a NEW USER
+// https://problemticket.herokuapp.com/dispatchers/createUser        to POST a NEW USER
