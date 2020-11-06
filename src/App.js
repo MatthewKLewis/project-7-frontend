@@ -53,6 +53,7 @@ class App extends React.Component {
       location: this.state.user.location
     }).then((res)=> {
       console.log(res);
+      //this.setState({})
     });
   }
 
@@ -61,7 +62,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Banner name={browserUser.username} email={browserUser.email} show={this.state.loggedIn}/>
+        <Banner name={browserUser.username} email={browserUser.email} location={browserUser.location} show={this.state.loggedIn}/>
 
         <Route exact path="/home"
           render={(routerProps) => {

@@ -12,7 +12,7 @@ class Banner extends React.Component {
 
     var content = '';
     if (this.props.show) {
-        content = <p className="orange">Signed in as: {this.props.name} ({this.props.email}) </p>
+      content = <p className="orange">Signed in as: {this.props.name} ({this.props.email}) in {this.props.location}</p>
     }
 
   return (
