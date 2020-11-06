@@ -6,6 +6,10 @@ import './App.css'
 //Component Imports
 import Home from "./components/Home";
 import Banner from "./components/Banner";
+import View from "./components/View"
+
+//Axios
+const axios = require('axios')
 
 class App extends React.Component {
   constructor() {
@@ -26,7 +30,6 @@ class App extends React.Component {
     };
   }
 
-  // When Discord's login page redirects 
   receiveUser = (data) => {
     this.setState({ user: {
       id: data.id,
@@ -41,6 +44,16 @@ class App extends React.Component {
     },
     loggedIn: true
     })
+
+    axios.post('/createUser', {
+      usernumber: this.state.user.id,
+      username: this.state.user.username,
+      email: this.state.user.email,
+      avatar: this.state.user.avatar,
+      location: this.state.user.location
+    }).then((res)=> {
+      console.log(res);
+    });
   }
 
   render() {
@@ -68,28 +81,28 @@ class App extends React.Component {
         <Route exact path="/view"
           render={(routerProps) => {
             return (
-            <div className=" "> XXX</div>            
+            <View />          
             )}}
         />
 
         <Route exact path="/submit"
           render={(routerProps) => {
             return (
-            <div className=" "> XXX</div>            
+            <View />             
             )}}
         />
 
         <Route exact path="/modify"
           render={(routerProps) => {
             return (
-            <div className=" "> XXX</div>            
+            <View />             
             )}}
         />
 
         <Route exact path="/delete"
           render={(routerProps) => {
             return (
-            <div className=" "> XXX</div>            
+            <View />             
             )}}
         />
 
