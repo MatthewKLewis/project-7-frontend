@@ -1,0 +1,63 @@
+body {
+  background-color: rgb(68, 93, 107);
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+}
+
+.Home {
+  grid-column: 2 / 3;
+
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+
+  height: 400px;
+}
+
+.title {
+  grid-column: 1 / 4;
+
+  background-color: rgb(95, 123, 139);
+  color: #fff;
+
+  margin: 0;
+  padding-left: 10px;
+}
+
+.login-button-container{
+  grid-column: 2 / 3;
+
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+
+  text-decoration: none;
+  color: white;
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+  height: 200px;
+}
+
+.primary-button {
+  background-color: rgb(36, 54, 65);
+
+  padding: 20px;
+  height: 30px;
+  width: 100px;
+  margin: 25px;
+  border-radius: 10px;
+
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.orange {color: rgb(228, 143, 46)}
