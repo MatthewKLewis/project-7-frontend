@@ -25,7 +25,17 @@ class View extends React.Component {
   render() {
 
     var table = 'loading...'
-    if (this.state.dataLoaded) table = this.state.problemTickets[0].message;
+    if (this.state.dataLoaded) table = this.state.problemTickets.map((item) => 
+    {
+      return (
+        <div className="ticket">
+          <p>{item.title}</p>  
+          <p>{item.message}</p>
+          <p>{item.createdOn}</p>
+          <p>{item.originator}</p>
+        </div>
+      )
+    });
 
     return (
       <div className="View">
