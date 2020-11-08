@@ -11,8 +11,6 @@ class Home extends React.Component {
 
   componentDidMount() {
     var hash = this.props.location.search.substring(6);
-    console.log(hash)
-
     axios.get('https://problemticket.herokuapp.com/login/' + hash.toString())
         .then((res) => this.props.operation(res.data))
   }

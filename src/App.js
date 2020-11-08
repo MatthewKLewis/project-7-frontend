@@ -7,6 +7,10 @@ import './App.css'
 import Home from "./components/Home";
 import Banner from "./components/Banner";
 import View from "./components/View"
+import Submit from "./components/View"
+import Modify from "./components/View"
+import Delete from "./components/View"
+
 
 //Axios
 const axios = require('axios')
@@ -26,11 +30,14 @@ class App extends React.Component {
       verified: false,
       locale: "en-US"
     },
-    loggedIn: false
+    loggedIn: false,
+    allUsersArray: []
     };
   }
 
   receiveUser = (data) => {
+    
+    //Sets the active user to be the data object received from Discord
     this.setState({ user: {
       id: data.id,
       username: data.username,
@@ -45,6 +52,7 @@ class App extends React.Component {
     loggedIn: true
     })
 
+    //Create a user based on the Discord user
     axios.post('https://problemticket.herokuapp.com/dispatchers/createUser', {
       usernumber: this.state.user.id,
       username: this.state.user.username,
@@ -55,6 +63,10 @@ class App extends React.Component {
       console.log(res);
       //this.setState({})
     });
+
+    //Grab a list of all users and put it in state's  allUsersArray
+    axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
+      .then((array)=> {this.setState({allUsersArray: array})})
   }
 
   render() {
@@ -89,21 +101,21 @@ class App extends React.Component {
         <Route exact path="/submit"
           render={(routerProps) => {
             return (
-            <View />             
+            <Submit />             
             )}}
         />
 
         <Route exact path="/modify"
           render={(routerProps) => {
             return (
-            <View />             
+            <Modify />             
             )}}
         />
 
         <Route exact path="/delete"
           render={(routerProps) => {
             return (
-            <View />             
+            <Delete />             
             )}}
         />
 
