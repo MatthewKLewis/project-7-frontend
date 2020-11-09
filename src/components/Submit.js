@@ -25,9 +25,9 @@ class Submit extends React.Component {
     var newProblemTicket = {
       title: this.state.title,
       message: this.state.message,
-      originator: "000000000000000000000000",
+      originator: this.props.activeUser,
       assignedTo: this.state.assignedTo,
-      assignedBy: "000000000000000000000000",
+      assignedBy: this.props.activeUser,
       createdOn: Date.now(),
       assignedOn: Date.now()
     }

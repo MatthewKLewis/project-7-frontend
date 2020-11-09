@@ -110,5 +110,5 @@ select { width: 100%;}
   line-height: 30px;
 }
 
-.orange {color: rgb(228, 143, 46); font-weight: bold;}
+.orange {color: rgb(228, 143, 46);}
 .small {font-size: 14px; color: rgb(158, 180, 192);}
