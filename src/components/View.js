@@ -14,8 +14,12 @@ class View extends React.Component {
     this.render = this.render.bind(this)
   }
 
-  deleteClick = () => {
-    console.log('delete click')
+  deleteClick = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget.value)
+    var tempObj = {_id: e.currentTarget.value}
+    axios.delete('https://problemticket.herokuapp.com/dispatchers/deleteTicket', tempObj)
+      .then((res) => {console.log(res)})
   }
 
   componentDidMount = () => {
@@ -43,7 +47,7 @@ class View extends React.Component {
           <p>Originator: {item.originator.username}</p>
           <p>Assigned to: {item.assignedTo.username}</p>
           <Link className="secondary-button" to='/modify'>Modify Ticket</Link>
-          <button className="secondary-button" onClick={this.deleteClick}><span className="orange">Delete Ticket</span></button>
+          <button value={item._id} className="secondary-button" onClick={this.deleteClick}><span className="orange">Delete Ticket</span></button>
         </div>
       )
     });
