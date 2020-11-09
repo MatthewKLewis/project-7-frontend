@@ -16,9 +16,12 @@ class View extends React.Component {
 
   deleteClick = (e) => {
     e.preventDefault();
+
     console.log(e.currentTarget.value)
-    var tempObj = {_id: e.currentTarget.value}
-    axios.delete('https://problemticket.herokuapp.com/dispatchers/deleteTicket', tempObj)
+
+    var tempObj = {"_id": e.currentTarget.value.toString()}
+
+    axios.delete('https://problemticket.herokuapp.com/dispatchers/deleteTicket', { data: tempObj, headers: {} })
       .then((res) => {console.log(res)})
   }
 
@@ -28,7 +31,6 @@ class View extends React.Component {
       .get("https://problemticket.herokuapp.com/dispatchers/")
       .then((data) => {
         this.setState({problemTickets: data.data, dataLoaded: true})
-        console.log(this.state.problemTickets[0].message)
       });
   };
 

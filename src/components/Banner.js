@@ -17,7 +17,7 @@ class Banner extends React.Component {
       content = 
         (
           <>
-            <p className="orange">Signed in as: {this.props.name} ({this.props.email}) in {this.props.location}</p>
+            <p className="orange">Signed in as: {this.props.name} ({this.props.email})</p>
             <Link className="secondary-button" to='/view'>View Tickets</Link>
             <Link className="secondary-button" to='/submit'>Submit Ticket</Link>
           </>

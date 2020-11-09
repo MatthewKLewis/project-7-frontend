@@ -37,12 +37,12 @@ class Submit extends React.Component {
   }
 
   componentDidMount = () => {
-    //load all users into a list that populated the assign dropdown in the form.
-    var tempOptionsArray = this.props.users.map((item)=> {
-      return (<option>{item.username} ({item._id})</option>)
-    })
+    // //load all users into a list that populated the assign dropdown in the form.
+    // var tempOptionsArray = this.props.users.map((item)=> {
+    //   return (<option>{item.username} ({item._id})</option>)
+    // })
 
-    this.setState({optionsArray: tempOptionsArray})
+    // this.setState({optionsArray: tempOptionsArray})
   };
 
   render() {
@@ -63,7 +63,7 @@ class Submit extends React.Component {
             <select required onChange={this.onChangeAssignation} type="select">
               <option></option>
               <option>000000000000000000000000</option>
-              {this.state.optionsArray}
+              {/* {this.state.optionsArray} */}
             </select>
           </div>
           <button type="submit" className="secondary-button">Submit</button>
