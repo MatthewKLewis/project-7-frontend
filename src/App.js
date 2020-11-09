@@ -59,13 +59,13 @@ class App extends React.Component {
       location: this.state.user.location
     }).then((res)=> {
       console.log(res);
-      //this.setState({})
     });
 
     //Grab a list of all users and put it in state's  allUsersArray
     axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
       .then((res)=> {this.setState({allUsersArray: res})})
   }
+
 
   render() {
     var browserUser = this.state.user
@@ -99,7 +99,7 @@ class App extends React.Component {
         <Route exact path="/submit"
           render={(routerProps) => {
             return (
-            <Submit {...routerProps} users={this.state.allUsersArray.data} activeUser={this.state.user.id}/>             
+            <Submit {...routerProps} activeUser={this.state.user.id}/>             
             )}}
         />
 
