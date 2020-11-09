@@ -3,7 +3,33 @@ import React from "react";
 class Submit extends React.Component {
   constructor() {
     super()
-    this.state = {optionsArray: []}
+    this.state = {
+      title: '', //STRING
+      message: '', //STRING
+      originator: '', //REF TO USER
+      assignedTo: '', //REF TO USER
+      assignedBy: '', //REF TO USER
+      createdOn: '', //DATE
+      assignedOn: '', //DATE
+      optionsArray: []}
+  }
+
+  onChangeTitle = (e) => { e.preventDefault(); this.setState({title: e.target.value})}
+  onChangeMessage = (e) => { e.preventDefault(); this.setState({message: e.target.value})}
+  onChangeAssignation = (e) => { e.preventDefault(); this.setState({assignedTo: e.target.value})}
+  onSubmit = (e) => {
+    e.preventDefault();
+    var newProblemTicket = {
+      title: this.state.title,
+      message: this.state.message,
+      originator: this.state.originator,
+      assignedTo: this.state.assignedTo,
+      assignedBy: this.state.assignedBy,
+      createdOn: Date.now(),
+      assignedOn: Date.now()
+    }
+    console.log(newProblemTicket)
+    window.location = '/'
   }
 
   componentDidMount = () => {
@@ -22,16 +48,17 @@ class Submit extends React.Component {
           <div className="form-group">
           <h3>New Problem Ticket</h3><hr/>
             <label>Title: </label><br/>
-            <input required onChange={this.XXX} type="name" placeholder="Title"></input>
+            <input required onChange={this.onChangeTitle} type="name" placeholder="Title"></input>
           </div>
           <div className="form-group">
             <label>Message: </label><br/>
-            <textarea required onChange={this.XXX} type="name" placeholder="Message"></textarea>
+            <textarea required onChange={this.onChangeMessage} type="name" placeholder="Message"></textarea>
           </div>
           <div className="form-group">
             <label>Assign To: </label><br/>
-            <select required onChange={this.XXX} type="select">
+            <select required onChange={this.onChangeAssignation} type="select">
               <option></option>
+              <option>Unassigned</option>
               {this.state.optionsArray}
             </select>
           </div>
