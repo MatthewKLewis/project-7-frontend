@@ -31,9 +31,9 @@ class Submit extends React.Component {
     }
     console.log(newProblemTicket)
 
-    axios.post('https://problemticket.herokuapp.com/dispatchers/createUser', newProblemTicket);
+    axios.post('https://problemticket.herokuapp.com/dispatchers/createTicket', newProblemTicket);
 
-    //window.location = '/'
+    window.location = '/'
   }
 
   componentDidMount = () => {
