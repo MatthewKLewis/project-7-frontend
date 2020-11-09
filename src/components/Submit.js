@@ -3,13 +3,16 @@ import React from "react";
 class Submit extends React.Component {
   constructor() {
     super()
-    this.state = {
-      problemTickets: {},
-      dataLoaded: false
-    }
+    this.state = {optionsArray: []}
   }
 
   componentDidMount = () => {
+    //load all users into a list that populated the assign dropdown in the form.
+    var tempOptionsArray = this.props.users.map((item)=> {
+      return (<option>{item.username} ({item._id})</option>)
+    })
+
+    this.setState({optionsArray: tempOptionsArray})
   };
 
   render() {
@@ -29,7 +32,7 @@ class Submit extends React.Component {
             <label>Assign To: </label><br/>
             <select required onChange={this.XXX} type="select">
               <option></option>
-              <option>User</option>
+              {this.state.optionsArray}
             </select>
           </div>
           <button type="submit" className="secondary-button">

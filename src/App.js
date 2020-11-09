@@ -65,7 +65,7 @@ class App extends React.Component {
 
     //Grab a list of all users and put it in state's  allUsersArray
     axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
-      .then((array)=> {this.setState({allUsersArray: array})})
+      .then((res)=> {this.setState({allUsersArray: res})})
   }
 
   render() {
@@ -100,7 +100,7 @@ class App extends React.Component {
         <Route exact path="/submit"
           render={(routerProps) => {
             return (
-            <Submit />             
+            <Submit {...routerProps} users={this.state.allUsersArray.data}/>             
             )}}
         />
 
