@@ -18,8 +18,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="Home">
-        <Link className="primary-button" to='/view'>View Tickets</Link>
-        <Link className="primary-button" to='/submit'>Submit Ticket</Link>
+        <p>Homepage</p>
       </div>
     )}
 }

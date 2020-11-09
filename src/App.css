@@ -91,6 +91,7 @@ select { width: 100%;}
 
 .ticket {
   padding: 20px;
+  margin-top: 10px;
   line-height: 16px;
 
   color: white;
@@ -103,3 +104,4 @@ select { width: 100%;}
 }
 
 .orange {color: rgb(228, 143, 46)}
+.small {font-size: 14px; color: rgb(158, 180, 192);}

@@ -30,8 +30,8 @@ class View extends React.Component {
     if (this.state.dataLoaded) table = this.state.problemTickets.map((item) => 
     {
       return (
-        <div className="ticket">
-          <h3>{item.title}</h3>
+        <div className="ticket" key={item._id}>
+          <h3>{item.title} <span className="small">({item._id})</span></h3>
           <hr/>
           <p>Message: {item.message}</p>
           <hr/>
@@ -46,7 +46,7 @@ class View extends React.Component {
 
     return (
       <div className="Home">
-        <p>{table}</p>
+        <div>{table}</div>
       </div>
     );
   }

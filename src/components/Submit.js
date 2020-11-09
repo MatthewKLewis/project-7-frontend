@@ -1,4 +1,6 @@
 import React from "react";
+// eslint-disable-next-line
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const axios = require('axios')
 
 class Submit extends React.Component {
@@ -23,17 +25,15 @@ class Submit extends React.Component {
     var newProblemTicket = {
       title: this.state.title,
       message: this.state.message,
-      originator: this.state.originator,
+      originator: "000000000000000000000000",
       assignedTo: this.state.assignedTo,
-      assignedBy: this.state.assignedBy,
+      assignedBy: "000000000000000000000000",
       createdOn: Date.now(),
       assignedOn: Date.now()
     }
     console.log(newProblemTicket)
 
-    axios.post('https://problemticket.herokuapp.com/dispatchers/createTicket', newProblemTicket);
-
-    window.location = '/'
+    axios.post('https://problemticket.herokuapp.com/dispatchers/createTicket', newProblemTicket).then(()=> {console.log("submitted.")});
   }
 
   componentDidMount = () => {
@@ -66,10 +66,10 @@ class Submit extends React.Component {
               {/* {this.state.optionsArray} */}
             </select>
           </div>
-          <button type="submit" className="secondary-button">
-            Submit
-          </button>
+          <button type="submit" className="secondary-button">Submit</button>
+          <Link to='/view'><button className="secondary-button">Return to Tickets</button></Link>
         </form>
+        
       </div>
     );
   }
