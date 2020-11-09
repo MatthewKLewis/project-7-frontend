@@ -13,27 +13,34 @@ class Modify extends React.Component {
   }
 
   componentDidMount = () => {
-    // console.log('fetching tickets')
-    // axios
-    //   .get("https://problemticket.herokuapp.com/dispatchers/")
-    //   .then((data) => {
-    //     this.setState({problemTickets: data.data, dataLoaded: true})
-    //     console.log(this.state.problemTickets[0].message)
-    //   });
   };
 
   render() {
-
-    var table = 'loading...'
-    if (this.state.dataLoaded) table = "modify";
-
     return (
-      <div className="Modify">
-        <p>Modify Problem Ticket</p>
-        <p>{table}</p>
+      <div className="Component">
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group">
+          <h3>Modify Problem Ticket</h3><hr/>
+            <label>Title: </label><br/>
+            <input required onChange={this.XXX} type="name" placeholder="Title"></input>
+          </div>
+          <div className="form-group">
+            <label>Message: </label><br/>
+            <textarea required onChange={this.XXX} type="name" placeholder="Message"></textarea>
+          </div>
+          <div className="form-group">
+            <label>Assign To: </label><br/>
+            <select required onChange={this.XXX} type="select">
+              <option></option>
+              <option>User</option>
+            </select>
+          </div>
+          <button type="submit" className="secondary-button">
+            Submit
+          </button>
+        </form>
       </div>
     );
   }
 }
-
 export default Modify;

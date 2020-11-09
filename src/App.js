@@ -7,10 +7,9 @@ import './App.css'
 import Home from "./components/Home";
 import Banner from "./components/Banner";
 import View from "./components/View"
-import Submit from "./components/View"
-import Modify from "./components/View"
-import Delete from "./components/View"
-
+import Submit from "./components/Submit"
+import Modify from "./components/Modify"
+import Delete from "./components/Delete"
 
 //Axios
 const axios = require('axios')

@@ -5,6 +5,11 @@ body {
   padding: 0;
 }
 
+hr { background-color: rgb(228, 143, 46);  height: 2px;  border: none; }
+input { height: 24px;  width: 100%; }
+textarea { height: 100px; width: 100%; resize: none;}
+select { width: 100%;}
+
 .App {
   display: grid;
   grid-template-columns: 20% auto 20%;
@@ -15,6 +20,16 @@ body {
 
   display: flex;
   flex-direction: row;
+  place-content: center;
+
+  height: 400px;
+}
+
+.Component {
+  grid-column: 2 / 3;
+
+  display: flex;
+  flex-direction: column;
   place-content: center;
 
   height: 400px;
@@ -58,6 +73,33 @@ body {
   color: white;
   text-decoration: none;
   text-align: center;
+}
+
+.secondary-button {
+  display: inline-block;
+  background-color: rgb(36, 54, 65);
+
+  padding: 15px;
+  margin: 5px 5px 5px 0px;
+  border-radius: 5px;
+
+  color: white;
+  text-decoration: none;
+  border-style: none;
+  text-align: center;
+}
+
+.ticket {
+  padding: 20px;
+  line-height: 16px;
+
+  color: white;
+  background-color: rgb(95, 123, 139);
+}
+
+.form-group {
+  color: white;
+  line-height: 30px;
 }
 
 .orange {color: rgb(228, 143, 46)}

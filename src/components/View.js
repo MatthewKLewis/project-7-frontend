@@ -1,5 +1,7 @@
 import React from "react";
 const axios = require("axios");
+// eslint-disable-next-line
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class View extends React.Component {
   constructor() {
@@ -29,17 +31,21 @@ class View extends React.Component {
     {
       return (
         <div className="ticket">
-          <p>{item.title}</p>  
-          <p>{item.message}</p>
-          <p>{item.createdOn}</p>
-          <p>{item.originator}</p>
+          <h3>{item.title}</h3>
+          <hr/>
+          <p>Message: {item.message}</p>
+          <hr/>
+          <p>Created On: {item.createdOn}</p>
+          <p>Originator: {item.originator.username}</p>
+          <p>Assigned to: {item.assignedTo.username}</p>
+          <Link className="secondary-button" to='/modify'>Modify Ticket</Link>
+          <Link className="secondary-button" to='/delete'><span className="orange">Delete Ticket</span></Link>
         </div>
       )
     });
 
     return (
-      <div className="View">
-        <p>views</p>
+      <div className="Home">
         <p>{table}</p>
       </div>
     );
