@@ -60,7 +60,7 @@ class App extends React.Component {
       location: this.state.user.location
     }).then((res)=> {
       console.log(res);
-      var tempNewUser = {...this.state.activeUser} //copy old object
+      var tempNewUser = {...this.state.user} //copy old object
       tempNewUser._id = res.data //change _id only
       this.setState({user: {tempNewUser}}) //set user with proper _id to state
     });
