@@ -18,6 +18,7 @@ class App extends React.Component {
     super();
 
     this.state = { user: {
+      _id: "",
       id: "",
       username: "",
       avatar: "",
@@ -59,6 +60,7 @@ class App extends React.Component {
       location: this.state.user.location
     }).then((res)=> {
       console.log(res);
+      this.setState({user: {_id :res.data}})
     });
 
     //Grab a list of all users and put it in state's  allUsersArray
