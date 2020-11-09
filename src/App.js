@@ -62,7 +62,7 @@ class App extends React.Component {
       console.log(res);
       var tempNewUser = {...this.state.user} //copy old object
       tempNewUser._id = res.data //change _id only
-      this.setState({user: {tempNewUser}}) //set user with proper _id to state
+      this.setState({user: {...tempNewUser}}) //set user with proper _id to state
     });
 
     //Grab a list of all users and put it in state's  allUsersArray
