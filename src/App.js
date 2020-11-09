@@ -100,7 +100,7 @@ class App extends React.Component {
         <Route exact path="/submit"
           render={(routerProps) => {
             return (
-            <Submit {...routerProps} users={this.state.allUsersArray.data}/>             
+            <Submit {...routerProps} users={this.state.allUsersArray.data} activeUser={this.state.user.id}/>             
             )}}
         />
 

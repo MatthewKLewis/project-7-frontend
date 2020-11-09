@@ -1,4 +1,5 @@
 import React from "react";
+const axios = require('axios')
 
 class Submit extends React.Component {
   constructor() {
@@ -29,16 +30,19 @@ class Submit extends React.Component {
       assignedOn: Date.now()
     }
     console.log(newProblemTicket)
-    window.location = '/'
+
+    axios.post('https://problemticket.herokuapp.com/dispatchers/createUser', newProblemTicket);
+
+    //window.location = '/'
   }
 
   componentDidMount = () => {
-    //load all users into a list that populated the assign dropdown in the form.
-    var tempOptionsArray = this.props.users.map((item)=> {
-      return (<option>{item.username} ({item._id})</option>)
-    })
+    // //load all users into a list that populated the assign dropdown in the form.
+    // var tempOptionsArray = this.props.users.map((item)=> {
+    //   return (<option>{item.username} ({item._id})</option>)
+    // })
 
-    this.setState({optionsArray: tempOptionsArray})
+    // this.setState({optionsArray: tempOptionsArray})
   };
 
   render() {
@@ -58,8 +62,8 @@ class Submit extends React.Component {
             <label>Assign To: </label><br/>
             <select required onChange={this.onChangeAssignation} type="select">
               <option></option>
-              <option>Unassigned</option>
-              {this.state.optionsArray}
+              <option>000000000000000000000000</option>
+              {/* {this.state.optionsArray} */}
             </select>
           </div>
           <button type="submit" className="secondary-button">
