@@ -9,7 +9,6 @@ import Banner from "./components/Banner";
 import View from "./components/View"
 import Submit from "./components/Submit"
 import Modify from "./components/Modify"
-import Delete from "./components/Delete"
 
 //Axios
 const axios = require('axios')
@@ -108,13 +107,6 @@ class App extends React.Component {
           render={(routerProps) => {
             return (
             <Modify />             
-            )}}
-        />
-
-        <Route exact path="/delete"
-          render={(routerProps) => {
-            return (
-            <Delete />             
             )}}
         />
 
