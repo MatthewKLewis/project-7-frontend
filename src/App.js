@@ -113,7 +113,9 @@ class App extends React.Component {
             <Modify />             
             )}}
         />
-
+        <div className="Footer">
+          <p className="muted">░ ░ ░ Made by Matthew Knight Lewis 2020 ░ ░ ░</p>
+        </div>
       </div>
     );
   }

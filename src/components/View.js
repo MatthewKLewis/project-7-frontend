@@ -56,7 +56,7 @@ class View extends React.Component {
     });
 
     return (
-      <div className="Home">
+      <div className="View">
         <div>{table}</div>
       </div>
     );

@@ -17,8 +17,9 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="Home">
-        <p>Homepage</p>
+      <div className="Component">
+        <p className="orange">Updates:</p>
+        <p className="white">11/9/2020: Welcome to the Problem Ticket Submitter BETA.</p>
       </div>
     )}
 }
