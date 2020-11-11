@@ -63,11 +63,11 @@ class App extends React.Component {
       var tempNewUser = {...this.state.user} //copy old object
       tempNewUser._id = res.data //change _id only
       this.setState({user: {...tempNewUser}}) //set user with proper _id to state
-    });
 
-    //Saves the user info in local storage:
-    localStorage.setItem('userInLocalStorage', JSON.stringify(this.state.user));
-    console.log('user saved to local storage')
+      //Saves the user info in local storage:
+      localStorage.setItem('userInLocalStorage', JSON.stringify(this.state.user));
+      console.log('user saved to local storage')
+    });
 
     //Grab a list of all users and put it in state's  allUsersArray
     axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
