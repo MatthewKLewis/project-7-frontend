@@ -78,7 +78,7 @@ class App extends React.Component {
   componentDidMount() {
     var tempLocalStorageUser = JSON.parse(localStorage.getItem('userInLocalStorage'));
     console.log(tempLocalStorageUser);
-    this.setState({user: tempLocalStorageUser})
+    this.setState({user: tempLocalStorageUser, loggedIn:true})
   }
 
 
