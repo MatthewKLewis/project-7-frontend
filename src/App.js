@@ -66,7 +66,7 @@ class App extends React.Component {
     });
 
     //Saves the user info in local storage:
-    localStorage.setItem('userInLocalStorage', this.state.user);
+    localStorage.setItem('userInLocalStorage', JSON.stringify(this.state.user));
     console.log('user saved to local storage')
 
     //Grab a list of all users and put it in state's  allUsersArray
@@ -75,7 +75,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('component did mount!')
+    console.log('component did mount!');
+    var tempLocalStorageUser = localStorage.getItem('userInLocalStorage');
+    console.log(tempLocalStorageUser);
   }
 
 
