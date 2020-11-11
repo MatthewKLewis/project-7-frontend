@@ -65,9 +65,17 @@ class App extends React.Component {
       this.setState({user: {...tempNewUser}}) //set user with proper _id to state
     });
 
+    //Saves the user info in local storage:
+    localStorage.setItem('userInLocalStorage', this.state.user);
+    console.log('user saved to local storage')
+
     //Grab a list of all users and put it in state's  allUsersArray
     axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
       .then((res)=> {this.setState({allUsersArray: res})})
+  }
+
+  componentDidMount() {
+    console.log('component did mount!')
   }
 
 
