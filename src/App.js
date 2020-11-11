@@ -107,10 +107,10 @@ class App extends React.Component {
             )}}
         />
 
-        <Route exact path="/modify"
+        <Route exact path="/modify/:id"
           render={(routerProps) => {
             return (
-            <Modify />             
+            <Modify {...routerProps}/>             
             )}}
         />
         <div className="Footer">
