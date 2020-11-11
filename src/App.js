@@ -74,10 +74,11 @@ class App extends React.Component {
       .then((res)=> {this.setState({allUsersArray: res})})
   }
 
+  //attempt to get user from local storage
   componentDidMount() {
-    console.log('component did mount!');
-    var tempLocalStorageUser = localStorage.getItem('userInLocalStorage');
+    var tempLocalStorageUser = JSON.parse(localStorage.getItem('userInLocalStorage'));
     console.log(tempLocalStorageUser);
+    this.setState({user: tempLocalStorageUser})
   }
 
 
