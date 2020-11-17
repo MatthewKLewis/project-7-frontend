@@ -23,8 +23,7 @@ const axios = require('axios')
 class App extends React.Component {
   constructor() {
     super();
-
-    this.state = { user: {
+    this.state = {user: {
       _id: "",
       id: "",
       username: "",
@@ -90,11 +89,9 @@ class App extends React.Component {
 
 
   render() {
-    var browserUser = this.state.user
-
     return (
       <div className="App">
-        <Banner name={browserUser.username} email={browserUser.email} location={browserUser.location} show={this.state.loggedIn}/>
+        <Banner name={this.state.user.username} email={this.state.user.email} location={this.state.user.location} show={this.state.loggedIn}/>
 
         <Route exact path="/home"
           render={(routerProps) => {
@@ -140,8 +137,6 @@ class App extends React.Component {
 }
 
 export default App;
-
-
 
 // https://problemticket.herokuapp.com/dispatchers/manifest to GET a manifest of all USERS
 // https://problemticket.herokuapp.com/dispatchers/         to GET a list of all TICKETS
