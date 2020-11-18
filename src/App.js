@@ -112,7 +112,7 @@ class App extends React.Component {
         <Route exact path="/view"
           render={(routerProps) => {
             return (
-            <View />          
+            <View show={this.state.loggedIn}/>
             )}}
         />
 

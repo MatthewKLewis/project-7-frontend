@@ -35,10 +35,12 @@ class View extends React.Component {
   };
 
   render() {
-
     var table = 'loading...'
     if (this.state.dataLoaded) table = this.state.problemTickets.map((item) => 
     {
+      var modifyButton = ""
+      if (this.props.show) modifyButton =  <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Modify Ticket</Link>
+
       return (
         <div className="ticket" key={item._id}>
           <h3>{item.title} <span className="small">({item._id})</span></h3>
@@ -49,7 +51,8 @@ class View extends React.Component {
           <p>Originator: {item.originator.username}</p>
           <p>Assigned to: {item.assignedTo.username}</p>
           <p>Assigned by: {item.assignedBy.username}</p>
-          <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Modify Ticket</Link>
+          {modifyButton}
+          {/* <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Modify Ticket</Link> */}
           {/* <button value={item._id} className="secondary-button" onClick={this.deleteClick}><span className="orange">Delete Ticket</span></button> */}
         </div>
       )

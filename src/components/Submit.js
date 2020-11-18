@@ -14,7 +14,8 @@ class Submit extends React.Component {
       assignedBy: '', //REF TO USER
       createdOn: '', //DATE
       assignedOn: '', //DATE
-      optionsArray: []}
+      optionsArray: []
+    }
   }
 
   onChangeTitle = (e) => { e.preventDefault(); this.setState({title: e.target.value})}
@@ -35,7 +36,7 @@ class Submit extends React.Component {
 
     axios.post('https://problemticket.herokuapp.com/dispatchers/createTicket', newProblemTicket).then(()=> {console.log("submitted.")});
 
-    window.location = '/'
+    window.location = '/view'
   }
 
   componentDidMount = () => {
