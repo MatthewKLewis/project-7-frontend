@@ -34,6 +34,8 @@ class Submit extends React.Component {
     console.log(newProblemTicket)
 
     axios.post('https://problemticket.herokuapp.com/dispatchers/createTicket', newProblemTicket).then(()=> {console.log("submitted.")});
+
+    window.location = '/'
   }
 
   componentDidMount = () => {
@@ -49,6 +51,7 @@ class Submit extends React.Component {
           });
           this.setState({optionsArray: tempOptionsArray})
         })
+        
   };
 
   render() {
@@ -73,7 +76,7 @@ class Submit extends React.Component {
             </select>
           </div>
           <button type="submit" className="secondary-button">Submit</button>
-          <Link to='/view'><button className="secondary-button">Return to Tickets</button></Link>
+          {/* <Link to='/view'><button className="secondary-button">Return to Tickets</button></Link> */}
         </form>
         
       </div>
