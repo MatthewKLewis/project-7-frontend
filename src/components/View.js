@@ -50,7 +50,7 @@ class View extends React.Component {
           <p>Assigned to: {item.assignedTo.username}</p>
           <p>Assigned by: {item.assignedBy.username}</p>
           <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Modify Ticket</Link>
-          <button value={item._id} className="secondary-button" onClick={this.deleteClick}><span className="orange">Delete Ticket</span></button>
+          {/* <button value={item._id} className="secondary-button" onClick={this.deleteClick}><span className="orange">Delete Ticket</span></button> */}
         </div>
       )
     });

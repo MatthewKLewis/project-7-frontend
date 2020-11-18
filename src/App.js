@@ -86,7 +86,6 @@ class App extends React.Component {
     if (tempLocalStorageUser) this.setState({user: tempLocalStorageUser, loggedIn:true})
   }
 
-
   render() {
     return (
       <div className="App">
@@ -101,9 +100,12 @@ class App extends React.Component {
         <Route exact path="/"
           render={(routerProps) => {
             return (
-            <div className="login-button-container">
-              <a className="primary-button" href="https://problemticket.herokuapp.com/">Discord Log In</a>
-            </div>            
+            <>
+              <div className="login-button-container">
+                <a className="primary-button" href="https://problemticket.herokuapp.com/">Discord Log In</a>
+                <a className="primary-button" href="/view">Skip Log-in</a>
+              </div>
+            </>
             )}}
         />
 
