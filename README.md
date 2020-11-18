@@ -12,4 +12,4 @@ I'm currently working on 2 new functionalities:
 ![Figure 1-1](screenshot.PNG "ticket view page")
 
 ### Phone View
-![Figure 1-2](phoneshot.JPG "phone view page")
+![Figure 1-2](phoneshot.jpg "phone view page")
