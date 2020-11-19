@@ -41,7 +41,7 @@ select { width: 100%;}
 }
 
 .logo {display: inline; width: 64px; height: 64px;}
-.logo-header {display: inline;}
+.logo-header {display: inline; margin: 5px;}
 
 .View {
   grid-column: 2 / 3;
@@ -65,9 +65,7 @@ select { width: 100%;}
 
 .title {
   grid-column: 1 / 4;
-  display: flex;
-  flex-direction: row;
-  place-items: center;
+  
 
   background-color: var(--lightblue);
   color: #fff;
@@ -75,6 +73,8 @@ select { width: 100%;}
   margin: 0;
   padding-left: 10px;
 }
+
+.flex {display: flex;   flex-direction: row;   place-items: center;}
 
 .login-button-container{
   grid-column: 2 / 3;
@@ -142,6 +142,7 @@ select { width: 100%;}
 }
 
 .orange {color: var(--orange);}
+.margin-zero {margin: 0;}
 .muted {color: var(--muted);}
 .white {color: var(--white);}
 .small {font-size: 14px; color: var(--muted);;}

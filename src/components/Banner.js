@@ -18,7 +18,7 @@ class Banner extends React.Component {
       content = 
         (
           <>
-            <p className="orange">Signed in as: {this.props.name} ({this.props.email})</p>
+            <p className="orange margin-zero">Signed in as: {this.props.name} ({this.props.email})</p>
             <Link className="secondary-button" to='/view'>View Tickets</Link>
             <Link className="secondary-button" to='/submit'>Submit Ticket</Link>
           </>
@@ -26,11 +26,16 @@ class Banner extends React.Component {
     }
 
   return (
+
     <div className="title">
-      <img className="logo" src={mainLogo} alt="logo"/>
-      <h1 className="logo-header">Problem Ticket Submitter</h1>
+      <div className="flex">
+        <img className="logo" src={mainLogo} alt="logo"/>
+        <h1 className="logo-header">Problem Ticket Submitter</h1>
+      </div>
       {content}
     </div>
+    
+
   );
   }
 }
