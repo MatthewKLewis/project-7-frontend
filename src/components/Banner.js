@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //const dotenv = require('dotenv')
 //const queryString = require('querystring')
+import mainLogo from '../ticket.png';
 
 class Banner extends React.Component {
   constructor() {
@@ -26,7 +27,8 @@ class Banner extends React.Component {
 
   return (
     <div className="title">
-      <h1 className="">Problem Ticket Submitter</h1>
+      <img className="logo" src={mainLogo} alt="logo"/>
+      <h1 className="logo-header">Problem Ticket Submitter</h1>
       {content}
     </div>
   );
