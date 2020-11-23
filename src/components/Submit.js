@@ -40,12 +40,10 @@ class Submit extends React.Component {
   }
 
   componentDidMount = () => {
-
+    //Grab a list of all users and put it in state's allUsersArray
     axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
         .then((res)=> {
-
           console.log(res.data)
-
           this.setState({allUsersArray: res.data});
           var tempOptionsArray = this.state.allUsersArray.map((item)=> {
             return (<option value={item._id} key={item._id}>{item.username} ({item._id})</option>)

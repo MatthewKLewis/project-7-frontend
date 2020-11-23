@@ -3,7 +3,6 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //const dotenv = require('dotenv')
 //const queryString = require('querystring')
-import mainLogo from '../ticket.png';
 
 class Banner extends React.Component {
   constructor() {
@@ -20,7 +19,9 @@ class Banner extends React.Component {
           <>
             <p className="orange margin-zero">Signed in as: {this.props.name} ({this.props.email})</p>
             <Link className="secondary-button" to='/view'>View Tickets</Link>
+            <Link className="secondary-button" to='/closed'>View Closed Tickets</Link>
             <Link className="secondary-button" to='/submit'>Submit Ticket</Link>
+            <Link className="secondary-button" to='/users'>View Users</Link>
           </>
         )
     }
@@ -32,7 +33,6 @@ class Banner extends React.Component {
 
     <div className="title">
       <div className="flex">
-        <img className="logo" src={mainLogo} alt="logo"/>
         <h1 className="logo-header">Problem Ticket Submitter</h1>
       </div>
       {content}

@@ -27,7 +27,7 @@ select { width: 100%;}
 
 .App {
   display: grid;
-  grid-template-columns: 20% auto 20%;
+  grid-template-columns: 10% auto 10%;
 }
 
 .Component {
@@ -43,11 +43,26 @@ select { width: 100%;}
 .logo {display: inline; width: 64px; height: 64px;}
 .logo-header {display: inline; margin: 5px;}
 
+.sort-button-container {
+  grid-column: 2 / 3;
+
+  padding: 20px;
+  margin-top: 10px;
+  line-height: 16px;
+
+  color: white;
+  background-color: var(--lightblue);
+
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+}
+
 .View {
   grid-column: 2 / 3;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   place-content: center;
 
   height: 100%;
@@ -127,6 +142,24 @@ select { width: 100%;}
   transition: 300ms;
 }
 
+.tertiary-button {
+  display: inline-block;
+  background-color: var(--blue);
+
+  padding: 10px;
+  margin: 5px 5px 5px 0px;
+  border-radius: 5px;
+
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  border-style: none;
+  text-align: center;
+
+  cursor: pointer;
+  transition: 300ms;
+}
+
 .disabled { background-color: var(--muted); color: #ccc; cursor: not-allowed;}
 
 .ticket {
@@ -144,7 +177,7 @@ select { width: 100%;}
 }
 
 .orange {color: var(--orange);}
-.margin-zero {margin: 0;}
+.margin-zero {margin-bottom: 5px; margin-top: 0;}
 .muted {color: var(--muted);}
 .white {color: var(--white);}
 .small {font-size: 14px; color: var(--muted);;}

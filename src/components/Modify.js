@@ -14,7 +14,8 @@ class Modify extends React.Component {
       assignedBy: '', //REF TO USER
       createdOn: '', //DATE
       assignedOn: '', //DATE
-      optionsArray: []}
+      optionsArray: []
+    }
   }
 
   onChangeTitle = (e) => { e.preventDefault(); this.setState({title: e.target.value})}
@@ -37,12 +38,13 @@ class Modify extends React.Component {
   }
 
   componentDidMount = () => {
+    axios.get(`https://problemticket.herokuapp.com/dispatchers/ticket/${this.props.match.params.id}`)
+      .then((res) => {console.log(res.data)} )
+      //SET STATE TO THIS TICKET INFO, AND SET DEFAULTS IN INPUTS TO THE STATE
 
     axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
         .then((res)=> {
-
           console.log(res.data)
-
           this.setState({allUsersArray: res.data});
           var tempOptionsArray = this.state.allUsersArray.map((item)=> {
             return (<option value={item._id} key={item._id}>{item.username} ({item._id})</option>)
@@ -56,7 +58,7 @@ class Modify extends React.Component {
       <div className="Component">
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-          <h3>New Problem Ticket</h3><hr/>
+          <h3>Modify Problem Ticket</h3><hr/>
             <label>Title: </label><br/>
             <input required onChange={this.onChangeTitle} type="name" placeholder="Title"></input>
           </div>

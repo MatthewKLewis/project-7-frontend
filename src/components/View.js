@@ -39,11 +39,11 @@ class View extends React.Component {
     if (this.state.dataLoaded) table = this.state.problemTickets.map((item) => 
     {
       var modifyButton = ""
-      if (!this.props.show) modifyButton = <button disabled="true" className="secondary-button disabled">Modify Ticket</button> 
+      if (!this.props.show) modifyButton = <button disabled={true} className="secondary-button disabled">Modify Ticket</button> 
       if (this.props.show)  modifyButton =  <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Modify Ticket</Link>
 
       var closeOutButton = ""
-      if (!this.props.show) closeOutButton = <button disabled="true" className="secondary-button disabled">Close Out Ticket</button>
+      if (!this.props.show) closeOutButton = <button disabled={true} className="secondary-button disabled">Close Out Ticket</button>
       if (this.props.show)  closeOutButton =  <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Close Out Ticket</Link>
 
       return (
@@ -64,7 +64,13 @@ class View extends React.Component {
 
     return (
       <div className="View">
-        <div>{table}</div>
+        <div className="sort-button-container">
+          <button className="tertiary-button orange">Sort By:</button>  
+          <button className="tertiary-button">Oldest -> Newest</button>
+          <button className="tertiary-button">Originator</button>
+          <button className="tertiary-button">Assigned To</button>
+          </div>
+        {table}
       </div>
     );
   }

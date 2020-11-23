@@ -9,6 +9,8 @@ import Banner from "./components/Banner";
 import View from "./components/View"
 import Submit from "./components/Submit"
 import Modify from "./components/Modify"
+import User from "./components/User"
+import Users from "./components/Users"
 
 //Axios
 const axios = require('axios')
@@ -67,28 +69,22 @@ class App extends React.Component {
       localStorage.setItem('userInLocalStorage', JSON.stringify(this.state.user));
       console.log('user saved to local storage')
     });
-
-    //Grab a list of all users and put it in state's  allUsersArray
-    axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
-      .then((res)=> {this.setState({allUsersArray: res})})
   }
 
-  //attempt to get user from local storage
   componentDidMount() {
+    //attempt to get user from local storage
     var tempLocalStorageUser = JSON.parse(localStorage.getItem('userInLocalStorage'));
     if (tempLocalStorageUser) this.setState({user: tempLocalStorageUser, loggedIn:true})
+
+    //Grab a list of all users and put it in state's allUsersArray
+    axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
+    .then((res)=> {this.setState({allUsersArray: res.data})})
   }
 
   render() {
     return (
       <div className="App">
         <Banner name={this.state.user.username} email={this.state.user.email} location={this.state.user.location} show={this.state.loggedIn}/>
-
-        <Route exact path="/home"
-          render={(routerProps) => {
-            return <Home {...routerProps} operation={this.receiveUser}/>;
-          }}
-        />
 
         <Route exact path="/"
           render={(routerProps) => {
@@ -100,6 +96,12 @@ class App extends React.Component {
               </div>
             </>
             )}}
+        />
+
+        <Route exact path="/home"
+          render={(routerProps) => {
+            return <Home {...routerProps} operation={this.receiveUser}/>;
+          }}
         />
 
         <Route exact path="/view"
@@ -120,6 +122,20 @@ class App extends React.Component {
           render={(routerProps) => {
             return (
             <Modify {...routerProps}/>             
+            )}}
+        />
+
+        <Route exact path="/users"
+          render={(routerProps) => {
+            return (
+            <Users {...routerProps}/>             
+            )}}
+        />
+
+        <Route exact path="/user/:id"
+          render={(routerProps) => {
+            return (
+            <User {...routerProps}/>             
             )}}
         />
         <div className="Footer">
