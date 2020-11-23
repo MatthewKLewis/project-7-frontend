@@ -24,6 +24,9 @@ class Banner extends React.Component {
           </>
         )
     }
+    else {
+      content = <p className="orange margin-zero">Sign in to modify and close out tickets</p>
+    }
 
   return (
 

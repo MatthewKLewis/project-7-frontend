@@ -127,6 +127,8 @@ select { width: 100%;}
   transition: 300ms;
 }
 
+.disabled { background-color: var(--muted); color: #ccc; cursor: not-allowed;}
+
 .ticket {
   padding: 20px;
   margin-top: 10px;

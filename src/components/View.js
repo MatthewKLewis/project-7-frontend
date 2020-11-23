@@ -39,7 +39,12 @@ class View extends React.Component {
     if (this.state.dataLoaded) table = this.state.problemTickets.map((item) => 
     {
       var modifyButton = ""
-      if (this.props.show) modifyButton =  <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Modify Ticket</Link>
+      if (!this.props.show) modifyButton = <button disabled="true" className="secondary-button disabled">Modify Ticket</button> 
+      if (this.props.show)  modifyButton =  <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Modify Ticket</Link>
+
+      var closeOutButton = ""
+      if (!this.props.show) closeOutButton = <button disabled="true" className="secondary-button disabled">Close Out Ticket</button>
+      if (this.props.show)  closeOutButton =  <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Close Out Ticket</Link>
 
       return (
         <div className="ticket" key={item._id}>
@@ -52,8 +57,7 @@ class View extends React.Component {
           <p>Assigned to: {item.assignedTo.username}</p>
           <p>Assigned by: {item.assignedBy.username}</p>
           {modifyButton}
-          {/* <Link className="secondary-button" params={item._id} to={`/modify/${item._id}`}>Modify Ticket</Link> */}
-          {/* <button value={item._id} className="secondary-button" onClick={this.deleteClick}><span className="orange">Delete Ticket</span></button> */}
+          {closeOutButton}
         </div>
       )
     });
