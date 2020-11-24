@@ -33,9 +33,7 @@ class Submit extends React.Component {
       assignedOn: Date.now()
     }
     console.log(newProblemTicket)
-
     axios.post('https://problemticket.herokuapp.com/dispatchers/createTicket', newProblemTicket).then(()=> {console.log("submitted.")});
-
     window.location = '/view'
   }
 
@@ -75,9 +73,7 @@ class Submit extends React.Component {
             </select>
           </div>
           <button type="submit" className="secondary-button">Submit</button>
-          {/* <Link to='/view'><button className="secondary-button">Return to Tickets</button></Link> */}
         </form>
-        
       </div>
     );
   }

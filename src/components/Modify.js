@@ -33,14 +33,22 @@ class Modify extends React.Component {
       assignedOn: Date.now()
     }
     console.log(newProblemTicket)
-
     axios.put(`https://problemticket.herokuapp.com/dispatchers/modifyTicket/${this.props.match.params.id}`, newProblemTicket).then(()=> {console.log("updated.")});
+    window.location = '/view'
   }
 
   componentDidMount = () => {
+    //get the ticket's info and put it in state
     axios.get(`https://problemticket.herokuapp.com/dispatchers/ticket/${this.props.match.params.id}`)
-      .then((res) => {console.log(res.data)} )
-      //SET STATE TO THIS TICKET INFO, AND SET DEFAULTS IN INPUTS TO THE STATE
+      .then((res) => {
+        console.log(res.data)
+        this.setState({
+          title: res.data.title,
+          message: res.data.message
+        })
+      });
+    
+    //SET STATE TO THIS TICKET INFO, AND SET DEFAULTS IN INPUTS TO THE STATE
 
     axios.get('https://problemticket.herokuapp.com/dispatchers/manifest')
         .then((res)=> {
@@ -60,11 +68,11 @@ class Modify extends React.Component {
           <div className="form-group">
           <h3>Modify Problem Ticket</h3><hr/>
             <label>Title: </label><br/>
-            <input required onChange={this.onChangeTitle} type="name" placeholder="Title"></input>
+            <input required onChange={this.onChangeTitle} type="name" value={this.state.title}></input>
           </div>
           <div className="form-group">
             <label>Message: </label><br/>
-            <textarea required onChange={this.onChangeMessage} type="name" placeholder="Message"></textarea>
+            <textarea required onChange={this.onChangeMessage} type="name" value={this.state.message}></textarea>
           </div>
           <div className="form-group">
             <label>Assign To: </label><br/>
@@ -75,9 +83,7 @@ class Modify extends React.Component {
             </select>
           </div>
           <button type="submit" className="secondary-button">Submit</button>
-          <Link to='/view'><button className="secondary-button">Return to Tickets</button></Link>
         </form>
-        
       </div>
     );
   }

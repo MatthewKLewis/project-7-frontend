@@ -5,6 +5,8 @@
   --orange: rgb(230, 109, 29);
   --white: #ffffff;
   --muted: rgb(136, 160, 173);
+
+  --purple: rgb(104, 56, 158);
 }
 
 body {
@@ -160,6 +162,16 @@ select { width: 100%;}
   transition: 300ms;
 }
 
+.user-name {display: inline-block; margin-top: 0px;}
+.role-badge {
+  display: inline-block; 
+  margin: 5px 20px 0px 20px; 
+  padding: 4px;
+  transform: translate(0,-2px);
+
+  border-radius: 5px;
+}
+
 .disabled { background-color: var(--muted); color: #ccc; cursor: not-allowed;}
 
 .ticket {
@@ -181,3 +193,6 @@ select { width: 100%;}
 .muted {color: var(--muted);}
 .white {color: var(--white);}
 .small {font-size: 14px; color: var(--muted);;}
+
+.bg-orange {background-color: var(--orange);}
+.bg-muted {background-color: var(--muted);}

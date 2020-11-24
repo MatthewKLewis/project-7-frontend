@@ -13,11 +13,15 @@ class UserCard extends React.Component {
   }
 
   render() {
+    var badgeStyle = 'role-badge'
+    if (this.props.role == 'dispatcher') badgeStyle += " bg-orange"
+    else if (this.props.role == 'user')  badgeStyle += " bg-muted"
+
     return (
       <div className="ticket">
-        <p className="muted">{this.props.id}</p>
-        <h2>{this.props.username}</h2>
-        <p>{this.props.role}</p>
+        <h2  className="user-name">{this.props.username}</h2>
+        <div className={badgeStyle}>{this.props.role}</div>
+        <p className="muted margin-zero">{this.props.id}</p>
         <p>{this.props.email}</p>
         <p className="orange">Tickets:</p>
       </div>

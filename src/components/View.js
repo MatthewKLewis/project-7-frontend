@@ -66,7 +66,7 @@ class View extends React.Component {
       <div className="View">
         <div className="sort-button-container">
           <button className="tertiary-button orange">Sort By:</button>  
-          <button className="tertiary-button">Oldest -> Newest</button>
+          <button className="tertiary-button">Oldest › Newest</button>
           <button className="tertiary-button">Originator</button>
           <button className="tertiary-button">Assigned To</button>
           </div>
