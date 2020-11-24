@@ -1,4 +1,3 @@
-import Axios from "axios";
 import React from "react";
 import axios from "axios";
 // eslint-disable-next-line
@@ -19,7 +18,7 @@ class UserCard extends React.Component {
 
     return (
       <div className="ticket">
-        <h2  className="user-name">{this.props.username}</h2>
+        <h3 className="user-name">{this.props.username}</h3>
         <div className={badgeStyle}>{this.props.role}</div>
         <p className="muted margin-zero">{this.props.id}</p>
         <p>{this.props.email}</p>

@@ -31,7 +31,10 @@ class Users extends React.Component {
 
     return (
       <div className="View">
-      <div className="sort-button-container">Sort By:</div>
+      <div className="sort-button-container bg-muted">
+          <button className="tertiary-button orange">Sort By:</button>  
+          <button className="tertiary-button">Role</button>
+        </div>
       {usersList}
       </div>
     )}

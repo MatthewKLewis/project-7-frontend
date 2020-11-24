@@ -64,12 +64,12 @@ class View extends React.Component {
 
     return (
       <div className="View">
-        <div className="sort-button-container">
+        <div className="sort-button-container bg-muted">
           <button className="tertiary-button orange">Sort By:</button>  
           <button className="tertiary-button">Oldest › Newest</button>
           <button className="tertiary-button">Originator</button>
           <button className="tertiary-button">Assigned To</button>
-          </div>
+        </div>
         {table}
       </div>
     );

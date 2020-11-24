@@ -1,12 +1,10 @@
 :root {
-  --darkblue: rgb(43, 64, 77);
-  --blue: rgb(62, 82, 94);
-  --lightblue: rgb(84, 110, 126);
+  --darkblue: rgb(44, 66, 78);
+  --blue: rgb(48, 66, 77);
+  --lightblue: rgb(69, 94, 109);
   --orange: rgb(230, 109, 29);
   --white: #ffffff;
-  --muted: rgb(136, 160, 173);
-
-  --purple: rgb(104, 56, 158);
+  --muted: rgb(108, 137, 153);
 }
 
 body {
@@ -43,7 +41,7 @@ select { width: 100%;}
 }
 
 .logo {display: inline; width: 64px; height: 64px;}
-.logo-header {display: inline; margin: 5px;}
+.logo-header {display: inline; margin: 5px 0px;}
 
 .sort-button-container {
   grid-column: 2 / 3;
@@ -57,7 +55,7 @@ select { width: 100%;}
 
   display: flex;
   flex-direction: row;
-  place-content: center;
+  place-items: center;
 }
 
 .View {
@@ -130,7 +128,7 @@ select { width: 100%;}
   display: inline-block;
   background-color: var(--darkblue);
 
-  padding: 15px;
+  padding: 10px 15px 10px 15px;
   margin: 5px 5px 5px 0px;
   border-radius: 5px;
 
@@ -146,7 +144,7 @@ select { width: 100%;}
 
 .tertiary-button {
   display: inline-block;
-  background-color: var(--blue);
+  background-color: var(--lightblue);
 
   padding: 10px;
   margin: 5px 5px 5px 0px;
@@ -162,7 +160,7 @@ select { width: 100%;}
   transition: 300ms;
 }
 
-.user-name {display: inline-block; margin-top: 0px;}
+.user-name {display: inline-block;}
 .role-badge {
   display: inline-block; 
   margin: 5px 20px 0px 20px; 
@@ -175,7 +173,7 @@ select { width: 100%;}
 .disabled { background-color: var(--muted); color: #ccc; cursor: not-allowed;}
 
 .ticket {
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
   margin-top: 10px;
   line-height: 16px;
 
